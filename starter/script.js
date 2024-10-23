@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +31,54 @@ const restaurant = {
     },
   },
 };
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+//destructuring an array you do const [ give an following letters eg a,b,c, i,j,k, x,y,z etc]
+//then assign to the array you have given to your array
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+// console.log(arr);
+
+const [i, j, k] = arr;
+console.log(i, j, k);
+console.log(arr);
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+/* switching variables*/
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+// const [starterMenu, mainMenu] = this.starterMenu;
+// console.log(first, second);
+
+//receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+//destructering nested arrays
+
+const nested = [2, 4, [5, 6]];
+// const [d, , e] = nested;
+// console.log(nested);
+
+//destructing nested of nested array
+
+const [d, , [e, f]] = nested;
+console.log(d, e, f);
+
+//destructring when you dont know the number of arrays
+//default values
+
+const [p = 1, q = 1, r] = [8, 9];
+console.log(p, q, r);
