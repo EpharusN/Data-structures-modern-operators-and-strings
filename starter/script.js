@@ -32,10 +32,10 @@ const restaurant = {
   },
 };
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
 //destructuring an array you do const [ give an following letters eg a,b,c, i,j,k, x,y,z etc]
 //then assign to the array you have given to your array
@@ -43,9 +43,9 @@ const c = arr[2];
 // console.log(x, y, z);
 // console.log(arr);
 
-const [i, j, k] = arr;
-console.log(i, j, k);
-console.log(arr);
+// const [i, j, k] = arr;
+// console.log(i, j, k);
+// console.log(arr);
 
 let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
@@ -80,5 +80,37 @@ console.log(d, e, f);
 //destructring when you dont know the number of arrays
 //default values
 
-const [p = 1, q = 1, r] = [8, 9];
+const [p = 1, q = 1, r = 1] = [8];
 console.log(p, q, r);
+
+// destructuring objects
+//we use the curly braces {} just like how we write objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+
+console.log(restaurantName, hours, tags);
+
+//default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+//mutating variables
+
+let g = 111;
+let h = 999;
+
+const obj = { g: 23, h: 7, i: 14 };
+({ g, h } = obj);
+console.log(g, h);
+
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
