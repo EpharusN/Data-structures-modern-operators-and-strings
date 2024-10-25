@@ -21,6 +21,10 @@ const restaurant = {
     );
   },
 
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your yummmy pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -148,3 +152,23 @@ const str = 'summer';
 const letters = [...str, '', 's.'];
 console.log(letters);
 console.log(...str);
+
+const ingredients = [
+  prompt('lets make pasta! Ingredient 1?'),
+  prompt('ingredient 2?'),
+  prompt(`ingredient3`),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
+//objects
+
+const newRestaurant = { foundedIn: 1988, ...restaurant, founder: 'Tee' };
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Sean';
+console.log(restaurant.name);
+
+console.log(restaurantCopy.name);
+console.log(newRestaurant);
