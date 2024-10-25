@@ -122,3 +122,29 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c);
+
+const arr = [3, 6, 7];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+const newCategories = [...restaurant.categories, 'Kenyan', 'Swahili'];
+console.log(newCategories);
+
+//copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//join 2 arrays
+const menuu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menuu);
+
+//iterables are arrays, strings, maps, sets, NOT objects
+
+const str = 'summer';
+const letters = [...str, '', 's.'];
+console.log(letters);
+console.log(...str);
