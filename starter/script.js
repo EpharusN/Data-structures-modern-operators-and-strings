@@ -15,6 +15,11 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} and will be delivered to ${address} at ${time}`
+    );
+  },
 
   openingHours: {
     thu: {
@@ -86,6 +91,12 @@ console.log(p, q, r);
 // destructuring objects
 //we use the curly braces {} just like how we write objects
 
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Kinunge Drive, Ruaka',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
@@ -94,23 +105,20 @@ const {
   openingHours: hours,
   categories: tags,
 } = restaurant;
-
 console.log(restaurantName, hours, tags);
 
-//default values
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
 
-//mutating variables
+//mutating objects
+let a = 111;
+let b = 999;
+const obj = { a: 3, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
 
-let g = 111;
-let h = 999;
-
-const obj = { g: 23, h: 7, i: 14 };
-({ g, h } = obj);
-console.log(g, h);
-
+//nested objects
 const {
-  fri: { open, close },
+  fri: { open: o, close: c },
 } = openingHours;
-console.log(open, close);
+console.log(o, c);
