@@ -46,6 +46,32 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'Lavida restaurant',
+  // numGuests: 10,
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'Lamalina restaurant',
+  owner: 'Rossi',
+};
+
+// rest1.numGuests = rest1.numGuests || 5;
+// rest2.numGuests = rest2.numGuests || 5;
+
+// rest1.numGuests ||= 5;
+// rest2.numGuests ||= 5;
+
+rest1.numGuests ??= 5;
+rest2.numGuests ??= 5;
+
+// rest1.owner = rest1.owner && '<Anonymus>';
+// rest2.owner = rest2.owner && '<Anonymus>';
+
+rest1.owner &&= '<Anonymus>';
+rest2.owner &&= '<Anonymus>';
+console.log(rest1, rest2);
+
 // const arr = [2, 3, 4];
 // const a = arr[0];
 // const b = arr[1];
@@ -180,75 +206,75 @@ const restaurant = {
 
 //rest pattern and parameters
 //spread because of the right hand side
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-//rest because of the left hand side
-const [a, b, ...rest] = [1, 2, 3, 4, 5];
-console.log(a, b, rest);
+// //rest because of the left hand side
+// const [a, b, ...rest] = [1, 2, 3, 4, 5];
+// console.log(a, b, rest);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-//objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// //objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-//functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
+// //functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
 
-add(2, 3);
-add(5, 3, 7, 2);
+// add(2, 3);
+// add(5, 3, 7, 2);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
-restaurant.orderPizza('olives');
+// restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
+// restaurant.orderPizza('olives');
 
-//short circuiting && and ||
-//can use any data type and return any data type, short-circuiting
+// //short circuiting && and ||
+// //can use any data type and return any data type, short-circuiting
 
-console.log('___OR___');
-console.log(3 || 'summer'); //3
-console.log('' || 'summer'); //summer
-console.log(true || 0); //true
-console.log(undefined || null); //null
+// console.log('___OR___');
+// console.log(3 || 'summer'); //3
+// console.log('' || 'summer'); //summer
+// console.log(true || 0); //true
+// console.log(undefined || null); //null
 
-console.log(undefined || 0 || '' || 'Summer' || 23 || null);
+// console.log(undefined || 0 || '' || 'Summer' || 23 || null);
 
-// restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// // restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
-//when there is one false the operation is terminated and the false value is returned
-console.log('____AND____');
-console.log(0 && 'summer');
-console.log(true && false);
-console.log(7 && 'summer');
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
+// //when there is one false the operation is terminated and the false value is returned
+// console.log('____AND____');
+// console.log(0 && 'summer');
+// console.log(true && false);
+// console.log(7 && 'summer');
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-//the or operator will return the first truthy value of all the operands or the last value if all are falsy
-//the and operator will return the first falsy value or the last value if all are truthy
-// || used in application to set default value  and the && operator is used to execute code in the second operand if the first is true
+// //the or operator will return the first truthy value of all the operands or the last value if all are falsy
+// //the and operator will return the first falsy value or the last value if all are truthy
+// // || used in application to set default value  and the && operator is used to execute code in the second operand if the first is true
 
-//The nullish coalescing operator ?
-// restaurant.numGuests = 0;
-//nullish: null and undefined (not 0 or "" it takes these as truthy values)
-const guests = restaurant.numGuests || 10;
-console.log(guests);
+// //The nullish coalescing operator ?
+// // restaurant.numGuests = 0;
+// //nullish: null and undefined (not 0 or "" it takes these as truthy values)
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
 
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect);
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
