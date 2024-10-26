@@ -211,3 +211,35 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 restaurant.orderPizza('olives');
+
+//short circuiting && and ||
+//can use any data type and return any data type, short-circuiting
+
+console.log('___OR___');
+console.log(3 || 'summer'); //3
+console.log('' || 'summer'); //summer
+console.log(true || 0); //true
+console.log(undefined || null); //null
+
+console.log(undefined || 0 || '' || 'Summer' || 23 || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+//when there is one false the operation is terminated and the false value is returned
+console.log('____AND____');
+console.log(0 && 'summer');
+console.log(true && false);
+console.log(7 && 'summer');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+//the or operator will return the first truthy value of all the operands or the last value if all are falsy
+//the and operator will return the first falsy value or the last value if all are truthy
+// || used in application to set default value  and the && operator is used to execute code in the second operand if the first is true
