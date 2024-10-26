@@ -223,7 +223,7 @@ console.log(undefined || null); //null
 
 console.log(undefined || 0 || '' || 'Summer' || 23 || null);
 
-restaurant.numGuests = 23;
+// restaurant.numGuests = 23;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 
@@ -243,3 +243,12 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 //the or operator will return the first truthy value of all the operands or the last value if all are falsy
 //the and operator will return the first falsy value or the last value if all are truthy
 // || used in application to set default value  and the && operator is used to execute code in the second operand if the first is true
+
+//The nullish coalescing operator ?
+// restaurant.numGuests = 0;
+//nullish: null and undefined (not 0 or "" it takes these as truthy values)
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
