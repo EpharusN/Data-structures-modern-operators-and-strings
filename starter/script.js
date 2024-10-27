@@ -394,3 +394,10 @@ for (const [i, el] of menu.entries()) {
 }
 
 // console.log([...menu.entries()]);
+
+/*
+Enhanced Object literal
+removing the function keyword that is the () and the : colon
+declaring objects separately and chaining them with the main object; in the restaurant object, I can remove the hours and call them in the restaurant object again
+for the weekdays, i can also remove the days and chain them in the weekdays and call them using the weekday and the index of the day i want
+*/
