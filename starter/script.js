@@ -424,3 +424,26 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 // const users = [{ name: 'summer', email: 'hey@summer.io' }];
 const users = [];
 console.log(users[0]?.name ?? 'user array is empty');
+
+//looping objects : Objects keys, values and entries
+
+//property name
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `we are open on ${properties.length} days:`;
+
+for (const day of properties) {
+  openStr += `${day},`;
+}
+console.log(openStr);
+
+//property values
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`on ${key} we open at ${open} and close at ${close}`);
+}
