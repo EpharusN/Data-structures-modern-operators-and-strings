@@ -455,14 +455,6 @@ console.log(users[0]?.name ?? 'user array is empty');
 // 1. Loop over the game.scored array and print each player name to the console,
 // along with the goal number (Example: "Goal 1: Lewandowski")
 
-const properties = Object.keys(openingHours);
-console.log(properties);
-let openStr = `we are open on ${properties.length} days:`;
-
-for (const day of properties) {
-  openStr += `${day},`;
-}
-console.log(openStr);
 for (const [i, player] of game.scored.entries()) {
   console.log(` Goal ${i + 1} ${player}`);
 }
@@ -495,3 +487,25 @@ for (const [team, odd] of Object.entries(game.odds)) {
 // Lewandowski: 2
 // }
 // GOOD LUCK 😀
+
+//just like an array, sets are also iterable
+const ordersSet = new Set(['pasta', 'pizza', 'pasta', 'risotto', 'pizza']);
+
+console.log(new Set('summer'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('milk');
+ordersSet.delete('pasta');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+//example
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(['pasta', 'pizza', 'pasta', 'risotto', 'pizza']).size);
+console.log(new Set('summer').size);
