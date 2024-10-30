@@ -580,3 +580,33 @@ console.log(question.get(question.get('correct') === answer));
 console.log(...question);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+//WHICH DATA TO USE
+
+//ARRAYS VS. SETS AND OBJECTS VS MAPS
+//ARRAYS VS SETS
+//ARRAYS                                  //SETS
+// tasks =['code', 'Eat', 'code']           task = new Set(['code', 'Eat', 'code'])
+//['code', 'Eat', 'code']                         //['code', 'Eat']
+
+//use when you need ordered list            //use when you need to work with unique values
+//of values(might contain duplicates)       //use when high performance is really important
+//use when you need to manipulate data      //use to remove duplicates in an array
+
+//OBJECTS VS MAPS
+
+//OBJECTS                                                           //MAPS
+// task ={                                                          task ={                                                                  }
+//   task: 'code',                                                  ['task': 'code'],
+//   date: 'today',                                                 ['code':, 'today']
+//   repeat: true                                                    [false, 'start coding']
+//       }                                                               ]}
+
+/*
+= more 'traditional' key/value store ('abused' , objects)           // better performance
+= easier to write and access values with . and []                   //keys can have any data type
+= use when when you need to include functions(method)               //easy to iterate
+= use when working with JSON (can convert to map)                   //easy to computer size
+                                                                    // use when you simply need to map key to values   
+                                                                    //use when you need keys that are not strings                                                           
+*/
