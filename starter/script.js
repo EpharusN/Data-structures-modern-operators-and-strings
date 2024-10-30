@@ -510,6 +510,10 @@ console.log(staffUnique);
 console.log(new Set(['pasta', 'pizza', 'pasta', 'risotto', 'pizza']).size);
 console.log(new Set('summer').size);
 
+//maps are useful than sets// they are used to map values to keys //key:value pairs
+//in maps keys can have any type of keys //many types of keys like objects etc
+//the best way to work with map is to create an empty map and pass in values to it
+//set is a method in the map constructor function
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze, Italy');
@@ -541,3 +545,38 @@ console.log(rest.size);
 rest.set([1, 2], 'Test');
 
 console.log(rest.get(arr));
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'Try Again'],
+]);
+
+console.log(question); //
+
+//convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//quiz app
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// const answer = Number(prompt('Your Answer'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+//convert map to array
+
+console.log(...question);
+console.log([...question.keys()]);
+console.log([...question.values()]);
