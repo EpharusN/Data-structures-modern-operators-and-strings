@@ -660,3 +660,41 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
+
+//working with strings
+const airline = 'The Kenya Airways';
+const plane = 'B730';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+
+console.log(airline.length);
+console.log('B730'.length);
+console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('Airways'));
+
+console.log(airline.slice(3));
+console.log(airline.slice(3, 9));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  //B and E are the middle seat
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat');
+  else console.log('You got lucky');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('summer'));
+console.log(typeof new String('summer'));
+console.log(typeof new String('summer').slice(1));
