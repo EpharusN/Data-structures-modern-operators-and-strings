@@ -698,3 +698,60 @@ checkMiddleSeat('3E');
 console.log(new String('summer'));
 console.log(typeof new String('summer'));
 console.log(typeof new String('summer').slice(1));
+
+
+//fix capitalization in name
+const passenger = 'jONas' //Jonas
+const lowerPassenger = passenger.toLowerCase()
+
+const upperPassenger = lowerPassenger.charAt(0).toUpperCase() + lowerPassenger.slice(1)
+console.log(upperPassenger)
+
+//check email
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@jonas.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim()
+console.log(trimmedEmail)
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email ===normalizedEmail);
+
+
+//replace 
+
+const priceGB = '287,97€';
+const priceUS = priceGB.replace('€', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = 'All passengers come to boarding door 23. Boarding door 23';
+
+// console.log(announcement.replaceAll('door', 'gate'))
+
+console.log(announcement.replace(/door/g, 'gate'))
+
+//Booleans
+const plant = 'Airbus A320neo';
+console.log(plant.includes('A320'));
+console.log(plant.includes('Boeing'));
+console.log(plant.startsWith('A3'));
+
+if(plant.startsWith('Airbus')&& plant.endsWith('neo')){
+  console.log('Part of the new Airbus family')
+}
+
+const checkBaggage = function(items){
+  const baggage = items.toLowerCase();
+  if(baggage.includes('knife') || baggage.includes('gun') || baggage.includes('spear')){
+    console.log('You are under arrest')
+  }else {
+    console.log('Welcome aboard')
+  }
+
+}
+
+checkBaggage('I have a gun, Knife and food');
+checkBaggage(' socks and camera');
+checkBaggage('Got some snacks and a spear for protection')
