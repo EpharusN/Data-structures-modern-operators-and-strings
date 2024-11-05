@@ -755,3 +755,10 @@ const checkBaggage = function(items){
 checkBaggage('I have a gun, Knife and food');
 checkBaggage(' socks and camera');
 checkBaggage('Got some snacks and a spear for protection')
+
+
+//WORKING WITH STRINGS 3
+console.log('a+very+nice+string'. split('+'));
+
+"😄😄".split(/(?:)/); // [ "\ud83d", "\ude04", "\ud83d", "\ude04" ]
+"😄😄".split(/(?:)/u); // [ "😄", "😄" ]
