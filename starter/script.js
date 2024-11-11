@@ -661,40 +661,79 @@ for (const [min, event] of gameEvents) {
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
 
-//working with strings
+//working with strings part 1
+// const airline = 'The Kenya Airways';
+// const plane = 'B730';
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+
+// console.log(airline.length);
+// console.log('B730'.length);
+// console.log(airline.indexOf('a'));
+// console.log(airline.lastIndexOf('a'));
+// console.log(airline.indexOf('Airways'));
+
+// console.log(airline.slice(3));
+// console.log(airline.slice(3, 9));
+
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+
+// const checkMiddleSeat = function (seat) {
+//   //B and E are the middle seat
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') console.log('You got the middle seat');
+//   else console.log('You got lucky');
+// };
+
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
+
+// console.log(new String('summer'));
+// console.log(typeof new String('summer'));
+// console.log(typeof new String('summer').slice(1));
+
+//working with strings part 2
 const airline = 'The Kenya Airways';
-const plane = 'B730';
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
+//FIX CAPITALIZATION IN NAME
+const passenger = 'suMMeR';
+const passengerLower = passenger.toLowerCase();
 
-console.log(airline.length);
-console.log('B730'.length);
-console.log(airline.indexOf('a'));
-console.log(airline.lastIndexOf('a'));
-console.log(airline.indexOf('Airways'));
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
 
-console.log(airline.slice(3));
-console.log(airline.slice(3, 9));
+console.log(passengerCorrect);
 
-console.log(airline.slice(0, airline.indexOf(' ')));
-console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+//CHECK EMAIL
+const email = 'hello@summer.io';
+const loginEmail = ' Hello@summer.io\n';
 
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
 
-const checkMiddleSeat = function (seat) {
-  //B and E are the middle seat
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') console.log('You got the middle seat');
-  else console.log('You got lucky');
-};
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
 
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+//replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
 
-console.log(new String('summer'));
-console.log(typeof new String('summer'));
-console.log(typeof new String('summer').slice(1));
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23, Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+
+console.log(announcement.replace(/door/g), 'gate');
+
